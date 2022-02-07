@@ -1,1 +1,6 @@
 # TodoApp
+
+asgiref==3.5.0
+Django==4.0.2
+sqlparse==0.4.2
+tzdata==2021.5
