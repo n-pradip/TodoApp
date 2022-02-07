@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="/" method="POST" class="bdr">
+  {% csrf_token %}
+  <div class="d-flex w-100 flex-row align-items-center" style="width: 100%;">
+    {{form.title}}
+    <button type="submit" class="cs-create_btn">Submit</button>
+  </div>
+</form>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">No.</th>
+    <th scope="col">Task list</th>
+    <th scope="col">Actions</th>
+  </tr>
+</thead>
+<tbody>
+  {% for each in all_list %}
+  <tr>
+    <th scope="row">{{each.id}}</th>
+    <td>
+      {% if each.complete == True %}
+        <strike>{{each.title}}</strike>
+      {% else %}
+        {{each.title}}
+      {% endif %}
+    </td>
+    <td>
+      <button type="submit" class="cs-btn"><a href="{% url 'update_todo' each.id %}" class="url_txt">Edit</a></button>
+      <button type="submit" class="cs-btn"><a href="{% url 'delete' each.id %}" class="url_txt">Delete</a></button>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock body %}

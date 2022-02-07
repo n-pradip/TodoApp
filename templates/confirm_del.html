@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="card">
+      <div class="card-body text-center">
+        Are you sure you want to delete <strong>{{data.title}}</strong>
+      </div>
+    </div>
+    <button type="submit" class="cs-btn">Confirm</button>
+  </form>
+{% endblock body %}
+
