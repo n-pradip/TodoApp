@@ -1,0 +1,1 @@
+web: gunicorn gsquare.wsgi --log-file -
