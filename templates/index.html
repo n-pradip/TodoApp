@@ -18,7 +18,7 @@
 <tbody>
   {% for each in all_list %}
   <tr>
-    <th scope="row">{{each.id}}</th>
+    <th scope="row">{{forloop.counter}}</th>
     <td>
       {% if each.complete == True %}
         <strike>{{each.title}}</strike>
